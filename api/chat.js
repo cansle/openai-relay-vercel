@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") return res.status(404).json({ error: "Not found" });
 
-  // 바디 파싱(raw/JSON 모두 대응)
+  // 바디 파싱 (raw/JSON 모두 대응)
   let body = req.body;
   if (!body || typeof body !== "object") {
     try {
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
       return res.status(upstreamRes.status).send(buf);
     }
 
-    // SSE 패스스루
+    // 스트리밍(SSE) 패스스루
     res.status(upstreamRes.status);
     res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
     res.setHeader("Cache-Control", "no-cache, no-transform");
