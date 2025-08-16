@@ -1,9 +1,0 @@
-{
-  "functions": {
-    "api/chat.js": {
-      "memory": 512,
-      "maxDuration": 30,
-      "regions": ["iad1"]  // 미국 동부(버지니아). sfo1 등으로 바꿔도 OK
-    }
-  }
-}
