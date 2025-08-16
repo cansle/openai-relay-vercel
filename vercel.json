@@ -1,10 +1,9 @@
 {
   "functions": {
     "api/chat.js": {
-      "runtime": "nodejs18.x",
+      "memory": 512,
       "maxDuration": 30,
-      "memory": 128
+      "regions": ["iad1"]
     }
-  },
-  "regions": ["iad1"]
+  }
 }
